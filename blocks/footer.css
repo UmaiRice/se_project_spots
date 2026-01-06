@@ -5,8 +5,8 @@
 }
 
 .footer__text {
-  width: 104px;
-  height: 16px;
+  font-size: 16ox;
+  line-height: 1;
   display: flex;
   align-items: center;
   margin: 60px 0;

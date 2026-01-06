@@ -1,6 +1,6 @@
 .profile {
   display: flex;
-  padding: 34px 20px;
+  padding: 34px 0 20px;
   border-bottom: 1px rgba(33, 33, 33, 0.4) solid;
 }
 
@@ -48,7 +48,16 @@
   background: none;
   outline: none;
   padding: 0;
-  border: 0cap;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.profile__edit-btn:hover {
+  opacity: 0.85;
 }
 
 .profile__add-btn {
@@ -59,6 +68,15 @@
   width: 149px;
   color: rgba(252, 245, 229, 1);
   border-radius: 8px;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.profile__add-btn:hover {
+  opacity: 0.8;
 }
 
 @media screen and (max-width: 628px) {
@@ -99,8 +117,8 @@
 
   .profile__add-btn {
     margin: 0;
-    width: 288px;
+    width: 280px;
     height: 52px;
-    padding: 18px 32px;
+    padding: 16px;
   }
 }
