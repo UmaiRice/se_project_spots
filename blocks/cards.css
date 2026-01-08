@@ -1,7 +1,10 @@
-.cards__list {
-  list-style-type: none;
+.cards {
   padding: 20px 0 40px;
   border-bottom: 1px solid #21212166;
+}
+
+.cards__list {
+  list-style-type: none;
   display: grid;
   gap: 40px 20px;
   grid-template-columns: repeat(auto-fit, 413px);

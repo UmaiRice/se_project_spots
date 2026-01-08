@@ -71,6 +71,7 @@
   cursor: pointer;
   transition: opacity 0.3s ease;
   display: flex;
+  justify-content: center;
   align-items: center;
   gap: 8px;
 }
