@@ -20,4 +20,8 @@ The way you'll do this at work is by exporting images directly from Figma — we
 
 Good luck and have fun!
 
-link: https://umairice.github.io/se_project_spots/index.html
+Website: https://umairice.github.io/se_project_spots/index.html
+
+Video: https://drive.google.com/file/d/1WwsZwg29oaXhDmT4MQCBT_c1HTkgvwNb/view?usp=drive_link
+
+(I had trouble with storage trying to download loom even when I deleted things so I tried my best with another device.)
