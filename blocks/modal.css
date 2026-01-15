@@ -120,12 +120,12 @@
   }
 
   .modal__container {
+    padding: 22px 12px 12px;
   }
 
   .modal__close-btn {
-    max-width: 40px;
-    max-height: 40px;
-    /*i'm unsure what i would need to add for the button*/
+    top: 12px;
+    right: 12px;
   }
 
   .modal__title {

@@ -45,18 +45,12 @@ editProfileCloseBtn.addEventListener("click", function () {
 });
 
 newPostBtn.addEventListener("click", function () {
-  openModal(editProfileModal);
+  openModal(newPostModal);
 });
 
 newPostCloseBtn.addEventListener("click", function () {
-  closeModal(editProfileModal);
+  closeModal(newPostModal);
 });
-
-function handleProfileFormSubmit(evt) {
-  evt.preventDefault();
-  console.log("");
-  closeModal(editProfileModal);
-}
 
 editProfileForm.addEventListener("submit", handleEditProfileSubmit);
 
@@ -72,6 +66,6 @@ function handleAddCardSubmit(evt) {
   evt.preventDefault();
   console.log(newPostImageInput.value);
   console.log(newPostCaptionInput.value);
-  closeModal(editProfileModal);
+  closeModal(newPostModal);
 }
 newPostForm.addEventListener("submit", handleAddCardSubmit);
