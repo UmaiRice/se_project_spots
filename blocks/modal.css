@@ -1,6 +1,7 @@
 .modal {
   visibility: hidden;
   background-color: #00000080;
+  font-family: Poppins, Arial, Helvetica, sans-serif;
   position: fixed;
   top: 0;
   right: 0;
@@ -11,7 +12,13 @@
   align-items: center;
   padding: 10px;
   opacity: 0;
-  transition: visibility 0s linear 0.5s, opacity 0.5s linear;
+  transition:
+    visibility 0s linear 0.5s,
+    opacity 0.5s linear;
+}
+
+.modal_type_preview {
+  padding: 0 16px;
 }
 
 .modal_is-opened {
@@ -37,6 +44,7 @@
   right: 50px;
   width: 40px;
   height: 40px;
+  background-image: url(../images/close.svg);
   border: none;
   background-color: transparent;
   cursor: pointer;
@@ -44,6 +52,21 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.modal__close_type_preview {
+  /*TODO - SETUP CORRECT BACKGROUND IMAGE*/
+  background-image: url(../images/preview-close.svg);
+  border: none;
+  top: 0;
+  right: -52.5px;
+  cursor: pointer;
+  background-size: contain;
+  transition: opacity 0.3s ease;
+}
+
+.modal__close_type_preview:hover {
+  opacity: 0.8;
 }
 
 .modal__close-btn:hover {
@@ -112,7 +135,29 @@
   opacity: 0.8;
 }
 
-@media screen and (max-width: 628px) {
+.modal__image-container {
+  position: relative;
+}
+.modal__image {
+  max-width: 80vw;
+  max-height: 80vh;
+  width: 100%;
+  object-fit: contain;
+  display: block;
+  border-radius: 8px;
+}
+
+.modal__caption {
+  /*finish styling caption*/
+  color: white;
+  display: inline-block;
+  background-color: #212121;
+  padding: 4px 8px;
+  line-height: 120%;
+  font-size: 20px;
+}
+
+@media screen and (max-width: 480px) {
   .modal__submit-btn {
     max-width: none;
     width: 100%;
@@ -130,5 +175,13 @@
 
   .modal__title {
     font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 627px) {
+  /*placed below media q 480 to avoid being overwritten             */
+  .modal__close_type_preview {
+    top: -48px;
+    right: 0;
   }
 }
