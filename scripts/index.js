@@ -52,7 +52,7 @@ const newPostCaptionInput = newPostModal.querySelector(
 
 const previewModal = document.querySelector("#preview-modal");
 const previewModalCloseBtn = previewModal.querySelector(
-  ".modal__close_type_preview",
+  ".modal__close-btn_type_preview",
 );
 const previewImageEl = previewModal.querySelector(".modal__image");
 const previewTitleEl = previewModal.querySelector(".modal__caption");
@@ -83,15 +83,15 @@ function getCardElement(data) {
     cardElement.remove();
   });
 
+  previewModalCloseBtn.addEventListener("click", () => {
+    closeModal(previewModal);
+  });
+
   cardImageEl.addEventListener("click", () => {
     previewImageEl.src = data.link;
     previewTitleEl.textContent = data.name;
-    previewTitleEl.alt = data.name;
+    previewImageEl.alt = data.name;
     openModal(previewModal);
-  });
-
-  previewModalCloseBtn.addEventListener("click", () => {
-    closeModal(previewModal);
   });
   return cardElement;
 }
@@ -151,12 +151,13 @@ function handleAddCardSubmit(evt) {
   const cardElement = getCardElement(inputValues);
   cardsList.prepend(cardElement);
   closeModal(newPostModal);
+
+  evt.target.removeEventListener();
 }
 newPostForm.addEventListener("submit", handleAddCardSubmit);
 
 //CODE FOR CARD
 initialCards.forEach(function (item) {
-  console.log(getCardElement(item));
   const cardElement = getCardElement(item);
   cardsList.append(cardElement);
 });
