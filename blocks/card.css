@@ -52,6 +52,7 @@
 
 .card__delete-btn {
   /*hover state and finish styling*/
+  z-index: 1; /*makes the button visible on hover*/
   width: 32px;
   height: 32px;
   top: 10px;

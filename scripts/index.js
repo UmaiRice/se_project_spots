@@ -152,7 +152,7 @@ function handleAddCardSubmit(evt) {
   cardsList.prepend(cardElement);
   closeModal(newPostModal);
 
-  evt.target.removeEventListener();
+  evt.target.reset();
 }
 newPostForm.addEventListener("submit", handleAddCardSubmit);
 
