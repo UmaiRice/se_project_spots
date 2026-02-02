@@ -19,12 +19,12 @@ const hideInputError = (formEl, inputEl, config) => {
   errorMessageEl.textContent = "";
 };
 
-const checkInputValidity = (formEl, inputEl) => {
+const checkInputValidity = (formEl, inputEl, config) => {
   console.log(inputEl.validationMessage);
   if (!inputEl.validity.valid) {
-    showInputError(formEl, inputEl, inputEl.validationMessage);
+    showInputError(formEl, inputEl, inputEl.validationMessage, config);
   } else {
-    hideInputError(formEl, inputEl);
+    hideInputError(formEl, inputEl, config);
   }
 };
 
@@ -34,25 +34,30 @@ const hasInvalidInput = (inputList) => {
   });
 };
 
-const toggleButtonState = (inputList, buttonEl) => {
+const toggleButtonState = (inputList, buttonEl, config) => {
   if (hasInvalidInput(inputList)) {
-    disableButton(buttonEl);
+    disableButton(buttonEl, config);
   } else {
     buttonEl.disabled = false;
-    //get the disbaled feature to work
-    //buttonEl.classList.remove("modal__submit-btn_type_disable");
+    if (config.inactiveButtonClass) {
+      buttonEl.classList.remove(config.inactiveButtonClass);
+    }
   }
 };
 
 //OPTIONAL (c)
-const resetValidation = (formEl, inputList, config) => {
+const resetValidation = (formEl, inputList, buttonEl, config) => {
   inputList.forEach((input) => {
-    hideInputError(formEl, input);
+    hideInputError(formEl, input, config);
   });
+  toggleButtonState(inputList, buttonEl, config);
 };
 
 const disableButton = (buttonEl, config) => {
   buttonEl.disabled = true;
+  if (config.inactiveButtonClass) {
+    buttonEl.classList.add(config.inactiveButtonClass);
+  }
   //get the disbaled feature to work/ maybe think about using ids
   //buttonEl.classList.add("modal__submit-btn_type_disable");
 };
@@ -72,7 +77,7 @@ const setEventListeners = (formEl, config) => {
   });
 };
 
-const enableValidation = (config) => {
+const enable = (config) => {
   console.log(config.formSelector);
   const formList = document.querySelectorAll(config.formSelector);
   formList.forEach((formEl) => {
