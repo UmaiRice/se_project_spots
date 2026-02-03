@@ -32,6 +32,9 @@ const initialCards = [
 const editProfileBtn = document.querySelector(".profile__edit-btn");
 const editProfileModal = document.querySelector("#edit-profile-modal");
 const editProfileCloseBtn = editProfileModal.querySelector(".modal__close-btn");
+const editProfileSubmitBtn = editProfileModal.querySelector(
+  ".profile__submit-btn",
+);
 const editProfileForm = editProfileModal.querySelector(".modal__form");
 const editProfileNameInput = editProfileModal.querySelector(
   "#profile-name-input",
@@ -118,7 +121,8 @@ function closeModal(modal) {
 }
 function handleEscape(evt) {
   if (evt.key === "Escape") {
-    closeModal(openedModal);
+    const activePopup = document.querySelector(".modal_is-opened");
+    closeModal(activePopup);
   }
 }
 function handleOverlayClick(evt) {
@@ -134,6 +138,7 @@ editProfileBtn.addEventListener("click", function () {
   resetValidation(
     editProfileForm,
     [editProfileNameInput, editProfileDescriptionInput],
+    editProfileSubmitBtn,
     settings,
   );
   openModal(editProfileModal);

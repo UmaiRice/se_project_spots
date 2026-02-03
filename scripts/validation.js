@@ -77,7 +77,7 @@ const setEventListeners = (formEl, config) => {
   });
 };
 
-const enable = (config) => {
+const enableValidation = (config) => {
   console.log(config.formSelector);
   const formList = document.querySelectorAll(config.formSelector);
   formList.forEach((formEl) => {
@@ -86,3 +86,5 @@ const enable = (config) => {
 };
 
 enableValidation(settings);
+
+//I was unable to find the optional comments
